@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 13</title>
+    <link rel="stylesheet" href="actividad13.css">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <h1>Gestón de productos usando localStorage</h1>
+        <button onclick="agregarProducto()">Agregar producto</button>
+            <dialog id="agregadorProductos">
+                <h2>Agregar productos</h2>
+                    <h4 id="alertaProd" class="alerta"></h4>
+                    <h4>Nombre</h4>
+                        <input type="text" id="nombreProducto">
+                    <h4>Rubro</h4>
+                        <select id="rubrosAgrProd"></select>
+                    <h4>Stock</h4>
+                        <input type="number" id="stockProducto">
+                    <h4>Precio</h4>
+                        <input type="number" id="precioProducto">
+                    <br>
+                    <button onclick="agregarProd()">Agregar</button>
+                    <br>
+                    <button class="cerrar" onclick="cerrarProductos()">Cerrar</button>
+            </dialog>
+        <button onclick="modificarRubros()">Modificar rubros</button>
+            <dialog id="modificadorRubros">
+                <h2>Modificar rubros</h2>
+                    <h4>Lista de rubros</h4>
+                        <div id="listaRubros"></div>
+                    <h4>Eliminar rubro</h4>
+                        <select id="rubros"></select>
+                        <br>
+                        <button onclick="eliminarRubro()">Eliminar</button>
+                    <h4>Agregar rubro</h4>
+                        <input type="text" id="rubroAgregado">
+                        <br>
+                        <button onclick="agregarRubro()">Agregar</button>
+                        <br>
+                    <button class="cerrar" onclick="cerrarRubros()">Cerrar</button>
+            </dialog>
+        <p class="box">
+            Al hacer clic en los encabezados de la tabla se organizan los productos alfabética o
+            numéricamente (dependiendo del tipo de valor que se obtenga en la columna), al
+            volver a hacer clic se va a organizar al revés (ej. menor a mayor, mayor a menor).
+        </p>
+        <dialog id="editarProd">
+            <h2>Editar producto</h2>
+                <h4>Nombre</h4>
+                    <p id="nombreProd"></p>
+                    <br>
+                    <input type="text" id="nombreIngProd">
+                    <br>
+                    <button onclick="guardarNombreProd()">Guardar</button>
+                <h4>Rubro</h4>
+                    <p id="rubroProd"></p>
+                    <br>
+                    <select id="rubrosEditProd"></select>
+                    <br>
+                    <button onclick="guardarRubroProd()">Guardar</button>
+                <h4>Stock</h4>
+                    <p id="stockProd"></p>
+                    <br>
+                    <input type="number" id="stockEditProd">
+                    <br>
+                    <button onclick="guardarStockProd()">Guardar</button>
+                <h4>Precio</h4>
+                    <p id="precioProd"></p>
+                    <br>
+                    <input type="number" id="precioEditProd">
+                    <br>
+                    <button onclick="guardarPrecioProd()">Guardar</button>
+                    <br>
+                <button onclick="cerrarEditar()">Listo</button>
+        </dialog>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Rubro</th>
+                <th>Stock</th>
+                <th>Precio</th>
+                <th></th>
+                <!-- espacio para botones de editar y borrar, por eso está vacío -->
+            </thead>
+            <tbody id="cuerpoTabla">
+                
+            </tbody>
+        </table>
+
+    <script src="actividad13.js"></script>
+</body>
+</html>
